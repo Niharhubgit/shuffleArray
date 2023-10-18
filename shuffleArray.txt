@@ -1,0 +1,37 @@
+import java.util.Random; // We need this for randomness
+
+public class ShuffleArray {
+public static void main(String[] args) {
+int[] originalArray = {1, 2, 3, 4, 5, 6, 7}; // Our array of numbers
+
+Random random = new Random(); // We're going to use this to make things random
+
+// Now, we're going to mix up the array (shuffle it)
+for (int i = originalArray.length - 1; i > 0; i--) {
+// Imagine we're picking two cards to swap (just like a card game)
+
+// First, we pick any random card from the remaining ones (e.g., if there are 7 cards left, we pick one randomly)
+int j = random.nextInt(i + 1);
+
+// Now, we swap the two cards (numbers in our array)
+int temp = originalArray[i]; // We put one card (number) aside for a moment
+originalArray[i] = originalArray[j]; // We put the other card (number) in its place
+originalArray[j] = temp; // And the card (number) we put aside goes to the other place
+
+// We keep doing this until we've swapped all the cards
+// After this, our array is all shuffled, just like shuffled cards in a game!
+
+// Here, we could print the array to see how it's shuffled
+for (int number : originalArray) {
+System.out.print(number + " ");
+}
+System.out.println(); // This makes a new line so we can see the shuffled array clearly
+}
+
+// After all these swaps, our array is now shuffled! You can print it to see the final order.
+System.out.println("Shuffled array:");
+for (int number : originalArray) {
+System.out.print(number + " ");
+}
+}
+}
